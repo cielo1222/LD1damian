@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #3e5c76; /* Dark blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 26px;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #2d3b48; /* Darker blue */
+    padding: 12px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 20px;
+    position: relative; /* Needed for dropdown positioning */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a i {
+    margin-right: 8px;
+}
+
+.navbar a:hover {
+    background-color: #576f87; /* Lighter blue */
+    color: #f9a825; /* Accent color: yellow */
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d3b48; /* Match navbar */
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #576f87; /* Lighter blue */
+    color: #f9a825; /* Accent yellow */
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+    margin-top: 10px;
+    flex-grow: 1; /* Ensure the main content takes up the available space */
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#calendar {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#calendar-container {
+    display: none;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+p {
+    font-size: 16px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #2d3b48; /* Dark blue */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #f9a825; /* Accent yellow on hover */
+}
+
+/* Contact Us Dropdown */
+.contact-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d3b48; /* Match navbar */
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-dropdown-content a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+    font-size: 16px;
+}
+
+.contact-dropdown-content a:hover {
+    background-color: #576f87; /* Lighter blue */
+    color: #f9a825; /* Accent yellow */
+}
+
+/* Social Links under Contact Us */
+.contact-dropdown-content ul {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #2d3b48;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.contact-dropdown-content > a:hover + ul {
+    display: block;
+}
+
+.contact-dropdown-content ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+.contact-dropdown-content ul li a:hover {
+    background-color: #576f87;
+    color: #f9a825;
+}
+
+/* Contact Form Styles (if added in the future) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #3e5c76;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #576f87;
+}

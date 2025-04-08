@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #029376;
+        }
+        .login-container {
+            background: rgb(152, 246, 183);
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            display: block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: rgb(6, 6, 6);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        button:disabled {
+            background: rgb(43, 204, 94);
+        }
+        .show-password {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-top: -10px;
+        }
+        .show-password input {
+            width: auto;
+            margin-right: 5px;
+        }
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Login</h1>
+    <!-- Default username and password set in the input fields -->
+    <input type="text" id="username"  placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    
+    <!-- Show Password Checkbox -->
+    <div class="show-password">
+        <input type="checkbox" id="showPassword" onclick="togglePassword()"> Show Password
+    </div>
+
+    <button id="loginBtn" onclick="login()">Login</button>
+    <p id="message"></p>
+</div>
+
+<script>
+    let loginAllowed = true;
+
+    function login() {
+        if (!loginAllowed) {
+            document.getElementById("message").innerText = "Please wait 10 seconds before trying again.";
+            return;
+        }
+
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        if (username === "admin123" && password === "admin123") {
+            alert("Login Successful");
+            window.location.href = "file:///D:/Damian/Home.html"; 
+            
+        } else {
+            document.getElementById("message").innerText = "Invalid login. Please wait 10 seconds before trying again.";
+            document.getElementById("loginBtn").disabled = true;
+            loginAllowed = false;
+
+    
+
+            setTimeout(() =>  {
+                document.getElementById("loginBtn").disabled = false;
+                document.getElementById("message").innerText = "";
+                loginAllowed = true;
+            }, 10000); // 10 seconds
+        }
+    }
+
+    function togglePassword() {
+        let passwordField = document.getElementById("password");
+        passwordField.type = document.getElementById("showPassword").checked ? "text" : "password";
+    }
+</script>
+
+</body>
+</html>
